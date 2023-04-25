@@ -1,0 +1,52 @@
+.section-project {
+    .section-title {
+        position: relative;
+
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.3;
+
+        text-transform: uppercase;
+
+        color: #1c1c1c;
+
+        margin-bottom: 40px;
+
+        &::before {
+            content: "";
+
+            display: block;
+            position: absolute;
+            background-color: $blue;
+
+            height: 3px;
+            width: 24px;
+
+            top: 50%;
+            left: -6px;
+
+            transform: translate(-100%, -50%);
+        }
+    }
+
+    .blocks-wrap {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+
+        gap: 45px;
+    }
+
+    .left-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding-top: 75px;
+    }
+
+    .right-block {
+        width: 100vw;
+        max-width: 835px;
+    }
+}

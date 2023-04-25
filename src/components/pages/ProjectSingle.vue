@@ -8,10 +8,13 @@
             :subquote="subquote"
         ></project-hero>
 
-        <section class="section section-project-descr">
-            <div class="container"></div>
-        </section>
-        <section class="section section-project-layout">
+        <project-descr
+            :description="description"
+            :params="params"
+            :benefits="benefits"
+        ></project-descr>
+
+        <section class="section section-project section-project-layout">
             <div class="container"></div>
         </section>
         <section class="section section-connection">
@@ -29,11 +32,13 @@
 <script>
 import Breadcrumbs from "@/components/sections/Breadcrumbs";
 import ProjectHero from "@/components/sections/ProjectHero";
+import ProjectDescr from "@/components/sections/ProjectDescr";
 
 export default {
     components: {
         Breadcrumbs,
         ProjectHero,
+        ProjectDescr,
     },
     data() {
         return {
@@ -52,13 +57,28 @@ export default {
             subquote:
                 "Але при деяких обставинах – або на вимогу боргу, або в силу якоїсь необхідності часто доводиться.",
             description:
-                "Якщо скористатися найпростішим прикладом, то хто з нас став би займатися якими б то не було тяжкими фізичними вправами, якщо б це не приносило з собою якоїсь користі? І хто міг би по справедливості дорікнути прагнення до насолоди, яке не несло б з собою ніяких неприємностей, або того, хто уникав би такого страждання, яке не приносило. <br/> Дійсно, ніхто не відкидає, не зневажає, не уникає насолод тільки через те, що це насолоди, але лише через те, що тих, хто не вміє розумно вдаватися насолоді, осягають великі страждання. ",
+                "Якщо скористатися найпростішим прикладом, то хто з нас став би займатися якими б то не було тяжкими фізичними вправами, якщо б це не приносило з собою якоїсь користі? І хто міг би по справедливості дорікнути прагнення до насолоди, яке не несло б з собою ніяких неприємностей, або того, хто уникав би такого страждання, яке не приносило. <br/> <br/> Дійсно, ніхто не відкидає, не зневажає, не уникає насолод тільки через те, що це насолоди, але лише через те, що тих, хто не вміє розумно вдаватися насолоді, осягають великі страждання. ",
             params: [
-                { "Країна:": "Україна" },
-                { "Місто:": "Львів" },
-                { "Вулиця:": "Незалежності" },
-                { "К-сть поверхів:": "15" },
-                { "Час роботи:": "23 міс." },
+                {
+                    title: "Країна:",
+                    value: "Україна",
+                },
+                {
+                    title: "Місто:",
+                    value: "Львів",
+                },
+                {
+                    title: "Вулиця:",
+                    value: "Незалежності",
+                },
+                {
+                    title: "К-сть поверхів:",
+                    value: "15",
+                },
+                {
+                    title: "Час роботи:",
+                    value: "23 міс.",
+                },
             ],
             benefits: [
                 {

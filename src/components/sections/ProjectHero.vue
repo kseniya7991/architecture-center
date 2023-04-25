@@ -1,5 +1,5 @@
 <template>
-    <section class="section section-project-hero">
+    <section class="section section-project section-project-hero">
         <div class="container">
             <div class="blocks-wrap">
                 <div class="left-block">
@@ -59,12 +59,6 @@ export default {
             required: true,
         },
     },
-
-    data() {
-        return {
-            isHasSubquote: this.subquote,
-        };
-    },
 };
 </script>
 
@@ -72,29 +66,12 @@ export default {
 .section-project-hero {
     padding: 0;
 }
-
-.blocks-wrap {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-
-    gap: 45px;
-}
-
 .left-block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    padding-top: 70px;
     padding-bottom: 25px;
 }
 
 .right-block {
     margin-right: -60px;
-
-    width: 100vw;
-    max-width: 830px;
 
     .img-wrap {
         width: 100%;

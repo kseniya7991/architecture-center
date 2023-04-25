@@ -17,6 +17,8 @@ export default {};
     align-items: stretch;
     justify-content: flex-start;
     width: 100vw;
+    max-width: 1600px;
+    margin: 0 auto;
     .logo-wrap {
         display: flex;
         justify-content: flex-start;
