@@ -1,6 +1,11 @@
 <template>
     <ul class="breadcrumbs-list">
-        <li v-for="(crumb, ci) in crumbs" :key="ci" class="breadcrumb-item">
+        <li
+            v-for="(crumb, ci) in crumbs"
+            :key="ci"
+            class="breadcrumb-item"
+            :class="{ active: isLast(ci) }"
+        >
             <span class="breadcrumb-link" @click="$router.push(crumb.link)">
                 {{ crumb.text }}
             </span>
@@ -16,6 +21,12 @@ export default {
             required: true,
         },
     },
+
+    methods: {
+        isLast(ci) {
+            return ci === this.crumbs.length - 1;
+        },
+    },
 };
 </script>
 
@@ -25,6 +36,8 @@ export default {
     align-items: center;
     justify-content: flex-start;
 
+    margin-bottom: 20px;
+
     .breadcrumb {
         &-item {
             display: flex;
@@ -33,8 +46,10 @@ export default {
 
             position: relative;
 
+            cursor: pointer;
+
             &:not(:last-child) {
-                margin-right: 10px;
+                margin-right: 15px;
 
                 &::after {
                     display: flex;
@@ -45,9 +60,9 @@ export default {
                 content: "";
                 position: absolute;
 
-                right: -5px;
+                right: -10px;
+                width: 5px;
 
-                width: 2px;
                 height: 1px;
                 background: #1c1c1c;
 
@@ -57,7 +72,10 @@ export default {
             }
 
             &.active {
-                .breacrumb-link {
+                cursor: default;
+
+                .breadcrumb-link {
+                    color: #a0a0a0;
                     &::after {
                         opacity: 0;
                     }
@@ -79,10 +97,10 @@ export default {
             display: block;
 
             font-weight: 300;
-            font-size: 10px;
+            font-size: 14px;
             line-height: 138.7%;
 
-            cursor: pointer;
+            text-transform: uppercase;
 
             &:after {
                 content: "";
