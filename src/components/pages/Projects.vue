@@ -3,7 +3,7 @@
         <h1>Добро пожаловать</h1>
     </div>
 </template>
-<script>
+<script lang="ts">
 export default {};
 </script>
 <style></style>

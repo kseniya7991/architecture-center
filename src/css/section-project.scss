@@ -42,6 +42,9 @@
         flex-direction: column;
         align-items: flex-start;
 
+        @include size(100%);
+        @include maxSize(calc(100% - 830px));
+        
         padding-top: 75px;
     }
 

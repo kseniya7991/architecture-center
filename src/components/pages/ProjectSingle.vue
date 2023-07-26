@@ -14,6 +14,9 @@
             :benefits="benefits"
         ></project-descr>
 
+        <project-layout :layouts="layouts"> </project-layout>
+        <project-feedback> </project-feedback>
+
         <section class="section section-project section-project-layout">
             <div class="container"></div>
         </section>
@@ -29,16 +32,20 @@
     </div>
 </template>
 
-<script>
-import Breadcrumbs from "@/components/sections/Breadcrumbs";
-import ProjectHero from "@/components/sections/ProjectHero";
-import ProjectDescr from "@/components/sections/ProjectDescr";
+<script lang="ts">
+import Breadcrumbs from "@/components/sections/Breadcrumbs.vue";
+import ProjectHero from "@/components/sections/ProjectSingle/ProjectHero.vue";
+import ProjectDescr from "@/components/sections/ProjectSingle/ProjectDescr.vue";
+import ProjectLayout from "@/components/sections/ProjectSingle/ProjectLayout.vue";
+import ProjectFeedback from "@/components/sections/ProjectSingle/ProjectFeedback.vue";
 
 export default {
     components: {
         Breadcrumbs,
         ProjectHero,
         ProjectDescr,
+        ProjectLayout,
+        ProjectFeedback,
     },
     data() {
         return {
@@ -103,37 +110,100 @@ export default {
                 },
             ],
 
-            layout: [
+            layouts: [
                 {
                     floor: "1",
                     rooms: [
-                        { Гараж: "24 м" },
-                        { Кухня: "54 м" },
-                        { Ванна: "14 м" },
-                        { Туалет: "10 м" },
+                        {
+                            title: "Гараж",
+                            size: "24",
+                            img: "img1.png",
+                        },
+                        {
+                            title: "Кухня",
+                            size: "54",
+                            img: "img2.jpg",
+                        },
+                        {
+                            title: "Ванна",
+                            size: "14",
+                            img: "img3.jpg",
+                        },
+                        {
+                            title: "Туалет",
+                            size: "10",
+                            img: "img4.jpg",
+                        },
                     ],
+                    scheme: "floor1.png",
                 },
                 {
                     floor: "2",
                     rooms: [
-                        { Спальня: "60 м" },
-                        { Ванна: "20 м" },
-                        { Туалет: "15 м" },
+                        {
+                            title: "Спальня",
+                            size: "54",
+                            img: "img2.jpg",
+                        },
+                        {
+                            title: "Ванна",
+                            size: "15",
+                            img: "img3.jpg",
+                        },
+                        {
+                            title: "Туалет",
+                            size: "10",
+                            img: "img1.png",
+                        },
                     ],
+                    scheme: "floor2.webp",
                 },
                 {
                     floor: "3",
-                    rooms: [{ Комната: "40 м" }, { Комната: "45 м" }],
+                    rooms: [
+                        {
+                            title: "Ванна",
+                            size: "54",
+                            img: "img3.jpg",
+                        },
+                        {
+                            title: "Кухня",
+                            size: "15",
+                            img: "img2.jpg",
+                        },
+                        {
+                            title: "Туалет",
+                            size: "10",
+                            img: "img1.png",
+                        },
+                    ],
+                    scheme: "floor3.png",
                 },
                 {
                     floor: "4",
                     rooms: [
-                        { Комната: "40 м" },
-                        { Комната: "45 м" },
-                        { Лоджия: "8 м" },
+                        {
+                            title: "Кухня",
+                            size: "54",
+                            img: "img1.png",
+                        },
+                        {
+                            title: "Ванна",
+                            size: "15",
+                            img: "img1.png",
+                        },
+                        {
+                            title: "Туалет",
+                            size: "10",
+                            img: "img1.png",
+                        },
                     ],
+                    scheme: "floor4.jpg",
                 },
             ],
+
+            selectedTabFloor: 0,
+            selectedTabRooms: 0,
 
             similar: [
                 {

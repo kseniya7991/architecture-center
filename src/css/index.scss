@@ -1,3 +1,8 @@
+@import "mixins";
 @import "./common/index.scss";
 
 @import "./section-project.scss";
+
+@mixin test($color) {
+    background-color: $color;
+}
